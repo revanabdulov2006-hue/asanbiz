@@ -154,7 +154,7 @@ export const LandingPage = () => {
       <div className="lp-nav-wrapper">
         <nav className="lp-nav-island" role="navigation">
           <a href="#hero" className="lp-nav-logo">
-            <img src="/img/logo.svg" alt="AsanBiznesim loqosu" onError={e => e.target.style.display='none'} />
+            <img src="../img/logo.svg" alt="AsanBiznesim loqosu" onError={e => e.target.style.display='none'} />
             <span>AsanBiznesim</span>
           </a>
 
@@ -256,7 +256,7 @@ Anbar, işçilər, maliyyə, tədarük və smena hesabatları — hamısı bir p
           }
         >
           <img
-            src="/img/screenhero.png"
+            src="../img/screenhero.png"
             alt="AsanBiznesim idarəetmə paneli"
             style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top left' }}
             onError={e => e.target.style.opacity = '0'}
