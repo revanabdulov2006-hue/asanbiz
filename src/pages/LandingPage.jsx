@@ -587,12 +587,12 @@ Anbar, işçilər, maliyyə, tədarük və smena hesabatları — hamısı bir p
         <div className="lp-founders-grid">
           {[
             {
-              name: 'Araz Süleymanov', role: 'Təsisçi və Baş Rəhbər (CEO)',
+              name: 'Rəvan Abdulzadə', role: 'Təsisçi və Baş Rəhbər (CEO)',
               img: '/img/founder1.png', abbr: 'AS',
               quote: 'Bizneslərin dəftər-kağız xaosundan çıxaraq bulud sistemlərinə keçməsi sadəcə rahatlıq deyil, gəlirlərin qorunmasıdır.'
             },
             {
-              name: 'Leyla Rəhimova', role: 'Həm-Təsisçi və Texniki Rəhbər (CTO)',
+              name: 'İlqar Hacıyev', role: 'Həm-Təsisçi və Texniki Rəhbər (CTO)',
               img: '/img/founder2.png', abbr: 'LR',
               quote: 'Ağıllı alqoritmlər və güclü sinxronizasiya arxitekturası sahibkarlarımıza 100% təhlükəsizlik və mobil sürət təmin edir.'
             }
