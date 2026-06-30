@@ -154,7 +154,7 @@ export const LandingPage = () => {
       <div className="lp-nav-wrapper">
         <nav className="lp-nav-island" role="navigation">
           <a href="#hero" className="lp-nav-logo">
-            <img src="img/logo.svg" alt="AsanBiznesim loqosu" onError={e => e.target.style.display='none'} />
+            <img src="/img/logo.svg" alt="AsanBiznesim loqosu" onError={e => e.target.style.display='none'} />
             <span>AsanBiznesim</span>
           </a>
 
