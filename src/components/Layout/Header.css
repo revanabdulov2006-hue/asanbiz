@@ -1,0 +1,286 @@
+.app-header {
+  height: 70px;
+  width: calc(100% - var(--sidebar-width) - (var(--spacing-lg) * 2));
+  position: fixed;
+  top: var(--spacing-lg);
+  right: var(--spacing-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--spacing-lg);
+  border-radius: var(--radius-md);
+  z-index: 1000;
+  transition: width var(--transition-smooth), background-color var(--transition-smooth), border-color var(--transition-smooth), top var(--transition-smooth);
+}
+
+.header-welcome h2 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.header-welcome p {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.highlight-text {
+  color: var(--color-primary);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+[data-theme="dark"] .highlight-text {
+  color: var(--color-primary-light);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.header-action-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  background-color: var(--bg-surface-hover);
+  border: 1px solid var(--border-color);
+  position: relative;
+  transition: all var(--transition-fast);
+}
+
+.header-action-btn:hover {
+  color: var(--text-primary);
+  transform: scale(1.05);
+  background-color: var(--border-color);
+}
+
+.glow-icon-sun {
+  color: #f59e0b;
+  filter: drop-shadow(0 0 4px rgba(245, 158, 11, 0.6));
+}
+
+.glow-icon-moon {
+  color: #3b82f6;
+  filter: drop-shadow(0 0 4px rgba(59, 130, 246, 0.6));
+}
+
+.notification-btn.pulse::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-error);
+  box-shadow: 0 0 0 rgba(239, 68, 68, 0.4);
+  animation: pulseNoti 2s infinite;
+}
+
+@keyframes pulseNoti {
+  0% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(239, 68, 68, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+  }
+}
+
+.notification-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background-color: var(--color-error);
+  color: white;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--bg-surface);
+}
+
+.notifications-container {
+  position: relative;
+}
+
+.notifications-dropdown {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  width: 320px;
+  max-height: 400px;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xl);
+  overflow: hidden;
+  z-index: 1010;
+}
+
+.dropdown-header {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.dropdown-header h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.mark-read-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+[data-theme="dark"] .mark-read-btn {
+  color: var(--color-primary-light);
+}
+
+.dropdown-list {
+  overflow-y: auto;
+  flex: 1;
+}
+
+.dropdown-item {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.8125rem;
+  display: flex;
+  gap: var(--spacing-sm);
+  align-items: flex-start;
+  transition: background-color var(--transition-fast);
+}
+
+.dropdown-item:hover {
+  background-color: var(--bg-surface-hover);
+}
+
+.dropdown-item.unread {
+  background-color: rgba(22, 101, 52, 0.03);
+}
+
+.noti-indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+.noti-danger .noti-indicator { background-color: var(--color-error); }
+.noti-warning .noti-indicator { background-color: var(--color-warning); }
+.noti-info .noti-indicator { background-color: var(--color-accent); }
+
+.dropdown-empty {
+  padding: var(--spacing-xl) 0;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+.dropdown-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1009;
+}
+
+.header-user-capsule {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: 4px 16px 4px 4px;
+  background-color: var(--bg-surface-hover);
+  border: 1px solid var(--border-color);
+  border-radius: 99px;
+  height: 40px;
+}
+
+.user-capsule-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  color: white;
+  font-weight: 700;
+  font-size: 0.8125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Crop everything to container circle */
+}
+
+.user-capsule-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+.user-capsule-name {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.mobile-menu-toggle-btn {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .app-header {
+    width: calc(100% - (var(--spacing-md) * 2));
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    height: 56px;
+    padding: 0 var(--spacing-md);
+  }
+  
+  .mobile-menu-toggle-btn {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-surface-hover);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    color: var(--text-secondary);
+  }
+
+  .header-welcome {
+    display: none !important;
+  }
+
+  .user-capsule-name {
+    display: none !important;
+  }
+
+  .header-user-capsule {
+    padding: 4px !important;
+  }
+}

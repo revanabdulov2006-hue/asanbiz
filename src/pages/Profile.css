@@ -1,0 +1,437 @@
+/* Profile Page Specific Styles */
+
+.profile-layout-grid {
+  display: grid;
+  grid-template-columns: 1.8fr 1.2fr;
+  gap: var(--spacing-lg);
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .profile-layout-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+}
+
+/* Role Switcher Test Panel */
+.role-switcher-card {
+  margin-bottom: var(--spacing-lg);
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-left: 4px solid var(--color-primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+}
+
+.role-switcher-info h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.role-switcher-info p {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.role-toggle-group {
+  display: flex;
+  background-color: var(--bg-primary);
+  padding: 4px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+}
+
+.role-toggle-btn {
+  padding: 6px 16px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.role-toggle-btn.active.admin {
+  background-color: var(--color-primary);
+  color: white;
+  box-shadow: var(--shadow-sm);
+}
+
+.role-toggle-btn.active.employee {
+  background-color: var(--color-accent);
+  color: white;
+  box-shadow: var(--shadow-sm);
+}
+
+.role-toggle-btn:not(.active):hover {
+  background-color: var(--bg-surface-hover);
+  color: var(--text-primary);
+}
+
+/* User Card Widget */
+.profile-card {
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--spacing-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.profile-card-banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+  z-index: 1;
+}
+
+.profile-card-avatar-wrapper {
+  position: relative;
+  margin-top: 25px; /* Floats over the banner */
+  z-index: 2;
+}
+
+.profile-card-avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 4px solid var(--bg-surface);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  background-color: var(--bg-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  transition: transform var(--transition-smooth);
+}
+
+.profile-card-avatar:hover {
+  transform: scale(1.05);
+}
+
+.profile-card-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-card-info {
+  margin-top: var(--spacing-xs);
+}
+
+.profile-card-info h2 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 2px;
+}
+
+.profile-card-role-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: 99px;
+  margin-top: var(--spacing-xs);
+}
+
+.role-admin {
+  background-color: rgba(22, 101, 52, 0.15);
+  color: var(--color-primary-light);
+}
+
+.role-employee {
+  background-color: rgba(59, 130, 246, 0.15);
+  color: var(--color-accent);
+}
+
+.profile-card-stats {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+  border-top: 1px solid var(--border-color);
+  padding-top: var(--spacing-md);
+  margin-top: var(--spacing-xs);
+  gap: var(--spacing-sm);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-label {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.stat-value {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* Avatar Selector */
+.avatar-gallery-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.avatar-gallery-section h4 {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.avatar-thumbnails-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-sm);
+}
+
+.avatar-thumb-btn {
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 2px solid var(--border-color);
+  overflow: hidden;
+  transition: all var(--transition-fast);
+  background-color: var(--bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.avatar-thumb-btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-primary-light);
+}
+
+.avatar-thumb-btn.selected {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-extralight);
+  transform: scale(1.05);
+}
+
+.avatar-thumb-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar-thumb-initials {
+  font-size: 0.875rem;
+}
+
+/* CV Drag and Drop Zone */
+.cv-upload-card {
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.cv-card-header h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.cv-card-header p {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.drag-zone {
+  border: 2px dashed var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-xl) var(--spacing-md);
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+  background-color: rgba(248, 250, 252, 0.5);
+}
+
+[data-theme="dark"] .drag-zone {
+  background-color: rgba(15, 23, 42, 0.2);
+}
+
+.drag-zone.dragging {
+  border-color: var(--color-primary-light);
+  background-color: rgba(34, 197, 94, 0.05);
+}
+
+.drag-zone:hover {
+  border-color: var(--color-primary);
+  background-color: var(--bg-surface-hover);
+}
+
+.drag-icon-wrapper {
+  color: var(--text-muted);
+  transition: transform var(--transition-smooth);
+}
+
+.drag-zone:hover .drag-icon-wrapper {
+  transform: translateY(-4px);
+  color: var(--color-primary);
+}
+
+.drag-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.drag-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.drag-subtitle {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.uploading-animation {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  align-items: center;
+}
+
+.uploading-title {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.upload-progressbar-bg {
+  width: 100%;
+  max-width: 200px;
+  height: 6px;
+  background-color: var(--border-color);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.upload-progressbar-fill {
+  height: 100%;
+  background-color: var(--color-primary);
+  border-radius: 99px;
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+.uploaded-file-capsule {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--bg-surface-hover);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  width: 100%;
+}
+
+.file-info-col {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.file-icon-wrapper {
+  color: var(--color-primary);
+  background-color: var(--color-primary-extralight);
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.file-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.file-title-name {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  max-width: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.file-size-bytes {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.file-remove-btn {
+  color: var(--color-error);
+  padding: 6px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.file-remove-btn:hover {
+  background-color: rgba(239, 68, 68, 0.1);
+  transform: scale(1.05);
+}
+
+/* Success Save Notification Alert */
+.save-toast-banner {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: 12px 20px;
+  background-color: var(--color-success);
+  color: white;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.profile-card-avatar-wrapper:hover .avatar-hover-overlay {
+  opacity: 1 !important;
+}

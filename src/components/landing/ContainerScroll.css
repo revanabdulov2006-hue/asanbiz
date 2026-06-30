@@ -1,0 +1,66 @@
+.cs-container {
+  height: 80rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  padding: 0 80px 80px;
+}
+
+@media (max-width: 768px) {
+  .cs-container {
+    height: 60rem;
+    padding: 0 16px 40px;
+  }
+}
+
+.cs-inner {
+  padding: 0 0 160px;
+  width: 100%;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .cs-inner {
+    padding: 0 0 40px;
+  }
+}
+
+.cs-header {
+  max-width: 64rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cs-card {
+  max-width: 64rem;
+  margin: -48px auto 0;
+  height: 40rem;
+  width: 100%;
+  border: 4px solid rgba(22, 163, 74, 0.35);
+  padding: 8px;
+  background: #111a14;
+  border-radius: 30px;
+}
+
+@media (max-width: 768px) {
+  .cs-card {
+    height: 28rem;
+    padding: 6px;
+    border-radius: 20px;
+  }
+}
+
+.cs-card-inner {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #f0fdf4;
+}
+
+@media (max-width: 768px) {
+  .cs-card-inner {
+    border-radius: 14px;
+  }
+}
